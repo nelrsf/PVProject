@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Router} from '@angular/router';
+import { Load } from 'src/app/models/Load/Load';
+import { LOADS } from 'src/app/models/Load/loads.json';
 
 @Component({
   selector: 'app-loadlist',
@@ -9,7 +11,11 @@ import { Router} from '@angular/router';
 })
 export class LoadlistComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  loadsList: Load[];
+
+  constructor(private router: Router) {
+    this.loadsList = LOADS;
+   }
 
   ngOnInit(): void {
   }
@@ -17,5 +23,6 @@ export class LoadlistComponent implements OnInit {
   backProj(){
     this.router.navigateByUrl('/auto-system');
   }
+
 
 }

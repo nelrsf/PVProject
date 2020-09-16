@@ -9,7 +9,7 @@
             <th rowspan="2" class="align-middle">Amount</th>
             <th rowspan="2" class="align-middle"> Power[W]</th>
             <th rowspan="2" class="align-middle">Total Power[W]</th>
-            <th colspan="24" class="text-center">Hour</th>
+            <th colspan="25" class="text-center">Hour</th>
            </tr>
            <tr>
             <th>1</th>
@@ -36,36 +36,22 @@
             <th>22</th>
             <th>23</th>
             <th>0</th>
+            <th>Total hours</th>
            </tr>
          </thead>
-         <tbody>
-           <tr>
-             <td>lamp</td>
-             <td>10</td>
-             <td>25</td>
-             <td>250</td>
-             <td>250</td>
-             <td>250</td>
-             <td>250</td>
+         <tbody >
+           <tr *ngFor ="let prop of loadsList">
+             <td>{{prop.description}}</td>
+             <td>{{prop.amount}}</td>
+             <td>{{prop.power}}</td>
+             <td>{{prop.totalPower}}</td>
+             <ng-container *ngFor = "let h of prop.hours">
+                <ng-container *ngIf="h; else elseBlock1"> <td><input type="checkbox" checked></td></ng-container>
+                <ng-template #elseBlock1> <td><input type="checkbox"></td> </ng-template>
+             </ng-container>
+             <td>{{prop.totalHours}}</td>
            </tr>
            <tr>
-            <td>TV</td>
-            <td>2</td>
-            <td>100</td>
-            <td>200</td>
-            <td>250</td>
-            <td>250</td>
-            <td>250</td>
-          </tr>
-          <tr>
-            <td>Phone Charger</td>
-            <td>6</td>
-            <td>10</td>
-            <td>60</td>
-            <td>60</td>
-            <td>250</td>
-            <td>250</td>
-          </tr>
          </tbody>
        </table>
    </div>
