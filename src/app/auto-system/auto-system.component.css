@@ -1,0 +1,26 @@
+.row1{
+    display: inline-block;
+    margin: 3%;
+}
+
+.row2{
+    display: inline-block;
+    align-items: center;
+}
+
+.row1_cont{
+    margin: 2%;
+    padding: 3%;
+    width: 75%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border-style: solid;
+    border-radius: 1%;
+}
+
+@media (max-width: 600px){
+    .row1_cont{
+        width: 95%;
+    }
+}
